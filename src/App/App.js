@@ -1,18 +1,29 @@
+import React from 'react';
 import './App.css';
 import Button from './components/Button/Button';
-const uneVar = 'Demat Breizh';
-function App() {
-  return (
-    <div className="App">
-      <Button label="Ok"
-        lorsqueJeClickSurLeBoutton={(value) => {
-          console.log('J\'ai ete clicke donc fais qqch stp');
-        }}
-        style={{ textDecoration: 'underline', fontStyle: 'italic' }} />
-      <Button label="Cancel" couleurDeFond={'tomato'} taillePolice={24} lorsqueJeClickSurLeBoutton={(value) => { }} />
-      <Button label="Don't know" couleurDeFond="skyblue" lorsqueJeClickSurLeBoutton={(value) => { }} />
+
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { counter: -1, lastClickedTime: null };
+    console.log(this.state);
+  }
+  componentDidMount(){
+    this.setState({counter:0})
+  }
+  render() {
+    return <div className="App">
+      <div style={{ padding: '20px' }}>les bouttons on ete clickés : {this.state.counter} fois<br />
+        {this.state.lastClickedTime && 'dernier click ' + this.state.lastClickedTime.toISOString()}</div>
+      <Button label="add" lorsqueJeClickSurLeBoutton={() => {
+        this.setState({ counter: this.state.counter + 1, lastClickedTime:new Date() });
+        console.log(this.state);
+      }} />
+      <Button label="init" couleurDeFond="red" lorsqueJeClickSurLeBoutton={() => {
+        
+      }} />
     </div>
-  );
+  }
 }
 
 export default App;
