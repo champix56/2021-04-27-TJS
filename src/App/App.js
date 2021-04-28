@@ -2,11 +2,12 @@ import React from 'react';
 import './App.css';
 import Button from './components/Button/Button';
 import MemeForm from './components/MemeForm/MemeForm';
+import MemeViewer from './components/MemeViewer/MemeViewer';
 
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { counter: -1, lastClickedTime: null };
+    this.state = { counter: -1, lastClickedTime: null, formContent:null };
     console.log(this.state);
   }
   componentDidMount() {
@@ -14,18 +15,13 @@ class App extends React.Component {
   }
   render() {
     return <div className="App">
-      <div style={{ padding: '20px' }}>les bouttons on ete clickés : {this.state.counter} fois<br />
-        {this.state.lastClickedTime && 'dernier click ' + this.state.lastClickedTime.toISOString()}
-        <MemeForm />
+      <div style={{ padding: '20px' }}>
+        <MemeForm onSubmit={(content)=>{
+          this.setState({formContent:content})
+        }} />
         </div>
-      
-      <Button label="add" lorsqueJeClickSurLeBoutton={() => {
-        this.setState({ counter: this.state.counter + 1, lastClickedTime: new Date() });
-        console.log(this.state);
-      }} />
-      <Button label="init" couleurDeFond="red" lorsqueJeClickSurLeBoutton={() => {
-
-      }} />
+      <MemeViewer meme={this.state.formContent}></MemeViewer>
+      {JSON.stringify(this.state)}
     </div>
   }
 }
