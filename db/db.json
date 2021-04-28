@@ -1,0 +1,39 @@
+{
+  "images": [
+    {
+      "id": 0,
+      "nom": "5eme Element",
+      "src": "5element.jpg",
+      "height": 720,
+      "width": 1280
+    }
+  ],
+  "memes": [
+    {
+      "id": 0,
+      "nom": "hyperGreen",
+      "text": {
+        "x": 400,
+        "y": 500,
+        "value": "Hyper green !!!",
+        "color": "#00AF00",
+        "bold": false,
+        "underline": true
+      },
+      "imageId": 0
+    },
+    {
+      "id": 1,
+      "nom": "hyperVert",
+      "text": {
+        "x": 400,
+        "y": 500,
+        "value": "Hyper Vert !!!",
+        "color": "#FFAF00",
+        "bold": false,
+        "underline": true
+      },
+      "imageId": 0
+    }
+  ]
+}
