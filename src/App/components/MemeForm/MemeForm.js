@@ -52,7 +52,7 @@ function MemeForm(props) {
         <Button label="cancel" couleurDeFond="tomato" lorsqueJeClickSurLeBoutton={()=>{setstate(initialState)}} />
         <Button label="save" couleurDeFond="skyblue" lorsqueJeClickSurLeBoutton={()=>{props.onSubmit(state)}} />
       </div>
-      {JSON.stringify(state)}
+      {/* {JSON.stringify(state)} */}
     </div>
   </form>
 }
