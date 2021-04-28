@@ -23,7 +23,7 @@ class App extends React.Component {
   render() {
     return <div className="App">
       <FlexGrowLayout >
-        <MemeViewer meme={this.state.currentMeme} />
+        <MemeViewer meme={{...this.state.currentMeme, image:this.state.images.find(elem=>elem.id===this.state.currentMeme.imageId)}} />
         <MemeForm images={this.state.images} onSubmit={(valeurDuMeme) => {console.log(valeurDuMeme);this.setState({ currentMeme: valeurDuMeme })}} />
       </FlexGrowLayout>
 

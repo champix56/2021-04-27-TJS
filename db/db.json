@@ -1,10 +1,34 @@
 {
   "images": [
     {"id": 0,"nom": "5eme Element","src": "5element.jpg","height": 720,"width": 1280},
-    {"id": 1,"nom": "4eme Element","src": "5element.jpg","height": 720,"width": 1280},
-    {"id": 2,"nom": "3eme Element","src": "5element.jpg","height": 720,"width": 1280},
-    {"id": 3,"nom": "2eme Element","src": "5element.jpg","height": 720,"width": 1280},
-    {"id": 4,"nom": "1er Element","src": "5element.jpg","height": 720,"width": 1280}
+    {
+        "id": 4,
+        "nom":"futurama 1",
+        "src": "futurama1.jpg",
+        "width": 640,
+        "height": 426
+      },
+      {
+        "id": 1,
+        "nom":"futurama 2",
+        "src": "futurama2.png",
+        "width": 640,
+        "height": 480
+      },
+      {
+        "id": 2,
+        "nom":"futurama 3",
+        "src": "futurama3.png",
+        "width": 640,
+        "height": 447
+      },
+      {
+        "id": 3,
+        "nom":"Gwenhadu",
+        "src": "gwenadu.jpg",
+        "width": 1999,
+        "height": 1332
+      }
   ],
   "memes": [
     {

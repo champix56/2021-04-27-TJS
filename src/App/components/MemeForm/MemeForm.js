@@ -13,7 +13,7 @@ function MemeForm(props) {
     }} /><br />
     <label htmlFor="meme-image">Image</label><br />
     <select id="meme-image" value={state.imageId} onChange={(evt) => {
-      setstate({ ...state, imageId: evt.target.value });
+      setstate({ ...state, imageId: Number(evt.target.value) });
     }}  >
       {
          props.images.map((e,i)=><option key={'option-image-'+i} value={e.id}>{e.nom}</option>)
