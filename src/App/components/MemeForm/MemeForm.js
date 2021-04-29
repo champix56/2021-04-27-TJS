@@ -18,16 +18,16 @@ function MemeForm(props) {
     store.subscribe(() => {
       setimages(store.getState().images);
       setstate(store.getState().currentMeme);
-
     })
-    if(undefined!==props.match.params.id){
-      store.dispatch({type:REDUCER_ACTIONS.SET_CURRENT_MEME_ID, value:Number(props.match.params.id)})
-    }
-    else{
-      store.dispatch({type:REDUCER_ACTIONS.CLEAR_CURRENT})
-      
-    }
-  }, []);  
+  
+  }, []);
+useEffect(() => {
+  if(undefined!==props.match.params.id){
+    store.dispatch({type:REDUCER_ACTIONS.SET_CURRENT_MEME_ID, value:Number(props.match.params.id)})
+  }
+}, [store.getState().images,store.getState().memes]);
+
+
   return <form data-testid="MemeForm" className={styles.MemeForm}>
     <h1>Meme Editor</h1>
     <label htmlFor="meme-name">Nom du meme</label><br />
