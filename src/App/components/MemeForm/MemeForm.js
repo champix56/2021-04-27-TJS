@@ -15,10 +15,11 @@ function MemeForm(props) {
     <select id="meme-image" value={state.imageId} onChange={(evt) => {
       setstate({ ...state, imageId: Number(evt.target.value) });
     }}  >
+      <option value=""></option>
+
       {
          props.images.map((e,i)=><option key={'option-image-'+i} value={e.id}>{e.nom}</option>)
       }
-      {/* <option value="img/empty.jpg">empty</option> */}
       {/* <option value="img/5element.jpg">5eme element</option> */}
     </select>
     <div className={styles.textEditor}>
