@@ -58,8 +58,9 @@ function reducer(state = initialState, action) {
         case REDUCER_ACTIONS.SET_CURRENT: return { ...state, currentMeme:action.value };
         case REDUCER_ACTIONS.CLEAR_CURRENT: return { ...state, currentMeme:initialState.currentMeme };
         case REDUCER_ACTIONS.SET_CURRENT_MEME_ID: 
-       console.log( { ...state, currentMeme:state.memes.find(e=>e.id===action.value) });
-        return { ...state, currentMeme:state.memes.find(e=>e.id===action.value) };
+        const meme=state.memes.find(e=>e.id===action.value);
+        console.log( meme );
+        return { ...state, currentMeme:undefined!==meme?meme:initialState.currentMeme };
         
         
         default: return state;
