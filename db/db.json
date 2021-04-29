@@ -56,6 +56,44 @@
         "underline": true
       },
       "imageId": 0
+    },
+    {
+      "id": 5,
+      "nom": "hyperGreen",
+      "text": {
+        "x": 400,
+        "y": 500,
+        "value": "Hyper green !!!",
+        "color": "#00AF00",
+        "bold": false,
+        "underline": true
+      },
+      "imageId": 0
+    },
+    {
+      "id": 6,
+      "nom": "hyperGreen",
+      "text": {
+        "x": 400,
+        "y": 500,
+        "value": "Hyper green !!!",
+        "color": "#00AF00",
+        "bold": false,
+        "underline": true
+      },
+      "imageId": 0
+    },{
+      "id": 7,
+      "nom": "hyperGreen",
+      "text": {
+        "x": 400,
+        "y": 500,
+        "value": "Hyper green !!!",
+        "color": "#00AF00",
+        "bold": false,
+        "underline": true
+      },
+      "imageId": 0
     }
   ]
 }
