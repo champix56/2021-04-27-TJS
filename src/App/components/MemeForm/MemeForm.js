@@ -1,10 +1,16 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import styles from './MemeForm.module.css';
 import Button from '../Button/Button';
-export const initialState = { name: '', text: { x: 0, y: 0, value: '', bold: false, underline: false, color: '#000000' }, imageId: '' }
+import store, { initialState, REDUCER_ACTIONS } from '../../store/store';
 function MemeForm(props) {
-  const [state, setstate] = useState(initialState);
+  const [state, setstate] = useState(initialState.currentMeme);
+  const [images, setimages] = useState(initialState.images);
+  useEffect(() => {
+    store.subscribe(() => {
+      setimages(store.getState().images)
+    })
+  }, []);
   return <form data-testid="MemeForm" className={styles.MemeForm}>
     <h1>Meme Editor</h1>
     <label htmlFor="meme-name">Nom du meme</label><br />
@@ -18,7 +24,7 @@ function MemeForm(props) {
       <option value=""></option>
 
       {
-         props.images.map((e,i)=><option key={'option-image-'+i} value={e.id}>{e.nom}</option>)
+        images.map((e, i) => <option key={'option-image-' + i} value={e.id}>{e.nom}</option>)
       }
       {/* <option value="img/5element.jpg">5eme element</option> */}
     </select>
@@ -45,26 +51,28 @@ function MemeForm(props) {
         setstate({ ...state, text: { ...state.text, color: evt.target.value } });
       }} /><br />
       <div className={styles.inlineContainer}>
-        <label><input type="checkbox" checked={state.text.underline} onChange={(evt)=>{
-        setstate({ ...state, text: { ...state.text, underline: evt.target.checked } });
-        }} /> : underline</label> / 
-        <label>bold : <input type="checkbox"  checked={state.text.bold} onChange={(evt)=>{
-        setstate({ ...state, text: { ...state.text, bold: evt.target.checked } });
+        <label><input type="checkbox" checked={state.text.underline} onChange={(evt) => {
+          setstate({ ...state, text: { ...state.text, underline: evt.target.checked } });
+        }} /> : underline</label> /
+        <label>bold : <input type="checkbox" checked={state.text.bold} onChange={(evt) => {
+          setstate({ ...state, text: { ...state.text, bold: evt.target.checked } });
         }} /></label>
       </div>
       <div style={{ margin: '20px 0' }}>
-        <Button label="cancel" couleurDeFond="tomato" lorsqueJeClickSurLeBoutton={()=>{setstate(initialState)}} />
-        <Button label="save" couleurDeFond="skyblue" lorsqueJeClickSurLeBoutton={()=>{props.onSubmit(state)}} />
+        <Button label="cancel" couleurDeFond="tomato" lorsqueJeClickSurLeBoutton={() => { 
+          setstate(initialState.currentMeme);
+          store.dispatch({type:REDUCER_ACTIONS.CLEAR_CURRENT});
+         }} />
+        <Button label="save" couleurDeFond="skyblue" lorsqueJeClickSurLeBoutton={() => {
+          store.dispatch({type:REDUCER_ACTIONS.SET_CURRENT,value:state});
+        }} />
       </div>
       {/* {JSON.stringify(state)} */}
     </div>
   </form>
 }
 
-MemeForm.propTypes = {
-  onSubmit:PropTypes.func.isRequired,
-  images:PropTypes.array.isRequired,
-};
+MemeForm.propTypes = {};
 
 MemeForm.defaultProps = {};
 

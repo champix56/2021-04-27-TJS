@@ -1,99 +1,19 @@
 {
   "images": [
     {"id": 0,"nom": "5eme Element","src": "5element.jpg","height": 720,"width": 1280},
-    {
-        "id": 4,
-        "nom":"futurama 1",
-        "src": "futurama1.jpg",
-        "width": 640,
-        "height": 426
-      },
-      {
-        "id": 1,
-        "nom":"futurama 2",
-        "src": "futurama2.png",
-        "width": 640,
-        "height": 480
-      },
-      {
-        "id": 2,
-        "nom":"futurama 3",
-        "src": "futurama3.png",
-        "width": 640,
-        "height": 447
-      },
-      {
-        "id": 3,
-        "nom":"Gwenhadu",
-        "src": "gwenadu.jpg",
-        "width": 1999,
-        "height": 1332
-      }
+    {"id": 4,"nom": "futurama 1","src": "futurama1.jpg","width": 640,"height": 426},
+    {"id": 1,"nom": "futurama 2","src": "futurama2.png","width": 640,"height": 480},
+    {"id": 2,"nom": "futurama 3","src": "futurama3.png","width": 640,"height": 447},
+    {"id": 3,"nom": "Gwenhadu","src": "gwenadu.jpg","width": 1999,"height": 1332},
+    {"id": 5,"nom": "chloe","src": "chloe.jpg","width": 1393,"height": 975},
+    {"id": 6,"nom": "fb","src": "fb.png","width": 512,"height": 512},
+    {"id": 7,"nom": "sddef","src": "sddefault.jpg","width": 640,"height": 480}
   ],
   "memes": [
-    {
-      "id": 0,
-      "nom": "hyperGreen",
-      "text": {
-        "x": 400,
-        "y": 500,
-        "value": "Hyper green !!!",
-        "color": "#00AF00",
-        "bold": false,
-        "underline": true
-      },
-      "imageId": 0
-    },
-    {
-      "id": 1,
-      "nom": "hyperVert",
-      "text": {
-        "x": 400,
-        "y": 500,
-        "value": "Hyper Vert !!!",
-        "color": "#FFAF00",
-        "bold": false,
-        "underline": true
-      },
-      "imageId": 0
-    },
-    {
-      "id": 5,
-      "nom": "hyperGreen",
-      "text": {
-        "x": 400,
-        "y": 500,
-        "value": "Hyper green !!!",
-        "color": "#00AF00",
-        "bold": false,
-        "underline": true
-      },
-      "imageId": 0
-    },
-    {
-      "id": 6,
-      "nom": "hyperGreen",
-      "text": {
-        "x": 400,
-        "y": 500,
-        "value": "Hyper green !!!",
-        "color": "#00AF00",
-        "bold": false,
-        "underline": true
-      },
-      "imageId": 0
-    },{
-      "id": 7,
-      "nom": "hyperGreen",
-      "text": {
-        "x": 400,
-        "y": 500,
-        "value": "Hyper green !!!",
-        "color": "#00AF00",
-        "bold": false,
-        "underline": true
-      },
-      "imageId": 0
-    }
+    {"id": 0,"nom": "hyperGreen","text": {"x": 400,"y": 500,"value": "Hyper green !!!","color": "#00AF00","bold": false,"underline": true},"imageId": 0},
+    {"id": 1,"nom": "hyperVert","text": {"x": 400,"y": 500,"value": "Hyper Vert !!!","color": "#FFAF00","bold": false,"underline": true},"imageId": 1},
+    {"id": 2,"nom": "hyperGreen","text": {"x": 400,"y": 500,"value": "Hyper green !!!","color": "#00AF00","bold": false,"underline": true},"imageId": 2},
+    {"id": 3,"nom": "hyperGreen","text": {"x": 400,"y": 500,"value": "Hyper green !!!","color": "#00AF00","bold": false,"underline": true},"imageId": 3},
+    {"id": 4,"nom": "hyperGreen","text": {"x": 400,"y": 500,"value": "Hyper green !!!","color": "#00AF00","bold": false,"underline": true},"imageId": 4}
   ]
 }
