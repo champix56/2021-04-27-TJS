@@ -9,9 +9,9 @@ import {
 
 const NavBar = () => (
   <Navbar bg="dark" variant="dark" data-testid="NavBar">
-    <Navbar.Brand href="#home">
-      Meme generator
-    </Navbar.Brand>
+    <LinkContainer to="/home">
+      <Navbar.Brand>Meme generator</Navbar.Brand>
+    </LinkContainer>
     <Nav
       activeKey="/thumbnail"
 
@@ -22,9 +22,9 @@ const NavBar = () => (
         </LinkContainer>
       </Nav.Item>
       <Nav.Item>
-      <LinkContainer to="/editor">
-        <Nav.Link  to="/editor">Nouveau meme</Nav.Link>
-      </LinkContainer>
+        <LinkContainer to="/editor">
+          <Nav.Link to="/editor">Nouveau meme</Nav.Link>
+        </LinkContainer>
       </Nav.Item>
     </Nav>
   </Navbar>
