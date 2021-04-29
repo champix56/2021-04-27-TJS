@@ -3,14 +3,31 @@ import PropTypes from 'prop-types';
 import styles from './MemeForm.module.css';
 import Button from '../Button/Button';
 import store, { initialState, REDUCER_ACTIONS } from '../../store/store';
+//import {useParams, useHistory, useLocation} from 'react-router-dom';
+import { withRouter } from 'react-router-dom'
+
 function MemeForm(props) {
   const [state, setstate] = useState(initialState.currentMeme);
   const [images, setimages] = useState(initialState.images);
+  // console.log(useParams());
+  // console.log(useHistory());
+  // console.log(useLocation());
+  console.log(props);
   useEffect(() => {
+    setimages(store.getState().images);
     store.subscribe(() => {
-      setimages(store.getState().images)
+      setimages(store.getState().images);
+      setstate(store.getState().currentMeme);
+
     })
-  }, []);
+    if(undefined!==props.match.params.id){
+      store.dispatch({type:REDUCER_ACTIONS.SET_CURRENT_MEME_ID, value:Number(props.match.params.id)})
+    }
+    else{
+      store.dispatch({type:REDUCER_ACTIONS.CLEAR_CURRENT})
+      
+    }
+  }, []);  
   return <form data-testid="MemeForm" className={styles.MemeForm}>
     <h1>Meme Editor</h1>
     <label htmlFor="meme-name">Nom du meme</label><br />
@@ -76,4 +93,4 @@ MemeForm.propTypes = {};
 
 MemeForm.defaultProps = {};
 
-export default MemeForm;
+export default withRouter(MemeForm);

@@ -11,9 +11,9 @@
   ],
   "memes": [
     {"id": 0,"nom": "hyperGreen","text": {"x": 400,"y": 500,"value": "Hyper green !!!","color": "#00AF00","bold": false,"underline": true},"imageId": 0},
-    {"id": 1,"nom": "hyperVert","text": {"x": 400,"y": 500,"value": "Hyper Vert !!!","color": "#FFAF00","bold": false,"underline": true},"imageId": 1},
-    {"id": 2,"nom": "hyperGreen","text": {"x": 400,"y": 500,"value": "Hyper green !!!","color": "#00AF00","bold": false,"underline": true},"imageId": 2},
+    {"id": 1,"nom": "hyperVert","text": {"x": 400,"y": 500,"value": "Hyper Vert !!!","color": "#FFAF00","bold": false,"underline": true},"imageId": 5},
+    {"id": 2,"nom": "takeMoney","text": {"x": 50,"y": 30,"value": "Take my money","color": "#00AF00","bold": false,"underline": true},"imageId": 2},
     {"id": 3,"nom": "hyperGreen","text": {"x": 400,"y": 500,"value": "Hyper green !!!","color": "#00AF00","bold": false,"underline": true},"imageId": 3},
-    {"id": 4,"nom": "hyperGreen","text": {"x": 400,"y": 500,"value": "Hyper green !!!","color": "#00AF00","bold": false,"underline": true},"imageId": 4}
+    {"id": 4,"nom": "NO","text": {"x": 50,"y": 36,"value": "No !!!!!","color": "#FFFFFF","bold": true,"underline": true},"imageId": 7}
   ]
 }
