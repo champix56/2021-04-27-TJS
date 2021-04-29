@@ -6,41 +6,54 @@ import MemeForm from './components/MemeForm/MemeForm';
 import MemeViewer from './components/MemeViewer/MemeViewer';
 import NavBar from './components/NavBar/NavBar';
 import Thumbnail from './components/Thumbnail/Thumbnail';
-import {REST_ADR,REST_ENDPOINTS} from './config/config';
-import store, {initialState as storeInitialState} from './store/store';
+import { REST_ADR, REST_ENDPOINTS } from './config/config';
+import store, { initialState as storeInitialState } from './store/store';
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch
+} from 'react-router-dom'
+
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { 
-      startTime: new Date(), 
-      currentMeme: storeInitialState.currentMeme, 
-      images:storeInitialState.images
-      };
+    this.state = {
+      startTime: new Date(),
+      currentMeme: storeInitialState.currentMeme,
+      images: storeInitialState.images
+    };
     console.log(this.state);
   }
   componentDidMount() {
     this.setState({
-      currentMeme:store.getState().currentMeme,
-      images:store.getState().images
+      currentMeme: store.getState().currentMeme,
+      images: store.getState().images
     });
-      store.subscribe(()=>{
-        this.setState({
-          currentMeme:store.getState().currentMeme,
-          images:store.getState().images
-        });
-      })
+    store.subscribe(() => {
+      this.setState({
+        currentMeme: store.getState().currentMeme,
+        images: store.getState().images
+      });
+    })
   }
   render() {
-    return <div className="App">
-    <NavBar/>
-    <Thumbnail images={this.state.images}/>
-      <FlexGrowLayout >
-        <MemeViewer meme={{...this.state.currentMeme, image:this.state.images.find(elem=>elem.id===this.state.currentMeme.imageId)}} />
-        <MemeForm />
-      </FlexGrowLayout>
-
-      {JSON.stringify(this.state)}
-    </div>
+    return <Router>
+      <div className="App">
+        <NavBar />
+        <Switch>
+          <Route path="/thumbnail">
+            <Thumbnail images={this.state.images} />
+          </Route>
+          <Route path="/editor">
+            <FlexGrowLayout >
+              <MemeViewer meme={{ ...this.state.currentMeme, image: this.state.images.find(elem => elem.id === this.state.currentMeme.imageId) }} />
+              <MemeForm />
+            </FlexGrowLayout>
+          </Route>
+        </Switch>
+        {JSON.stringify(this.state)}
+      </div>
+    </Router>
   }
 }
 
